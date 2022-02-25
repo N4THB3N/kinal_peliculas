@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:kinal_peliculas/providers/movies_provider.dart';
+import 'package:kinal_peliculas/search/search_delegate.dart';
 import 'package:kinal_peliculas/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
+  String get searchFieldLabel => 'Buscar pelicula';
+
   @override
   Widget build(BuildContext context) {
     final moviesProvider = Provider.of<MoviesProvider>(context);
@@ -14,7 +17,9 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
           actions: [
             IconButton(
-                onPressed: () {}, icon: const Icon(Icons.search_outlined))
+                onPressed: () => showSearch(
+                    context: context, delegate: MovieSearchDelegate()),
+                icon: const Icon(Icons.search_outlined))
           ],
         ),
         body: SingleChildScrollView(

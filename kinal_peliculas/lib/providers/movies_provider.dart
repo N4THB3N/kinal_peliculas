@@ -9,7 +9,7 @@ import 'package:kinal_peliculas/models/models.dart';
 
 class MoviesProvider extends ChangeNotifier {
   String _baseUrl = 'api.themoviedb.org';
-  String _apiKey = '3cafce0e2f6ef748f20373f0979d303b';
+  String _apiKey = 'API-KEY-Cambiar';
   String _language = 'es-ES';
 
   List<Movie> onDisplayMovies = [];
